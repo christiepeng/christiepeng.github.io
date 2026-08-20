@@ -1,5 +1,155 @@
-Christie Peng
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christie Peng | Portfolio</title>
+  <style>
+    :root {
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --accent: #2563eb;
+      --bg: #ffffff;
+      --card-bg: #f9fafb;
+      --border: #e5e7eb;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  Hi, I’m Christie — I've worked in software engineering, data analytics, and startups. In my free time, I love reading sci-fi, baking pastries, and traveling the world.
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg);
+      line-height: 1.7;
+      padding: 3rem 1.25rem;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Christie Peng</h1>
+      <p class="subtitle">Computer Science @ Georgia Institute of Technology</p>
+      <div class="tag-container">
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Media</span>
+        <span class="tag">Software Engineering</span>
+        <span class="tag">Data Analytics</span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>About</h2>
+        <p>
+          Christie Peng is a 2026 scholarship recipient and an undergraduate at the 
+          Georgia Institute of Technology majoring in Computer Science, with concentrations 
+          in cybersecurity and media.
+        </p>
+      </section>
+
+      <section>
+        <h2>Experience & Industry Background</h2>
+        <p>
+          Over the past three years, Christie has gained hands-on experience across software engineering, 
+          data analytics, startups, and cybersecurity. As a two-time Home Depot intern, she partnered 
+          with stakeholders to build a quoting system projected to save $20M by optimizing carpet sales.
+        </p>
+        <p>
+          She also interned with Walmart Global Tech in its Marketplace division, where she automated 
+          a global supply chain process. At an AI startup, she supported internal operations and 
+          product–market fit research. She is currently working as a co-op with Delta Air Lines 
+          in the Ground Support Equipment Safety division.
+        </p>
+      </section>
+
+      <section>
+        <h2>Campus Leadership & Teaching</h2>
+        <p>
+          On campus, Christie has held multiple leadership roles, including Advisor and Head of External 
+          Communications for FreShGA (Freshman Student Government), Alumni Relations Director for her 
+          sorority, Kappa Alpha Theta, and committee chair for Georgia Tech’s Student Center Programs Council. 
+          She has organized high-impact campus events with significant budgets, such as <em>The Final Stand</em> 
+          and <em>Midnight Breakfast</em>, serving thousands of students.
+        </p>
+        <p>
+          Additionally, she served as a Teaching Assistant for the <em>Human Dimensions of Cybersecurity</em> 
+          course, where she managed examinations and led office hours for 113 students.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

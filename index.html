@@ -34,7 +34,7 @@
     }
 
     header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 1.5rem;
     }
@@ -48,52 +48,70 @@
     }
 
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
-      font-weight: 400;
     }
 
-    section {
+    /* Tab Navigation Bar */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border);
       margin-bottom: 2rem;
     }
 
-    h2 {
-      font-size: 1.2rem;
+    .tab-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      padding: 0.65rem 1rem;
+      cursor: pointer;
+      position: relative;
+      bottom: -2px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
       color: var(--accent);
-      margin-bottom: 0.75rem;
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* Tab Panels */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .tab-panel.active {
+      display: block;
     }
 
     p {
       font-size: 1.05rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
-    .highlight-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin-top: 1rem;
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .tag {
-      background: #eef2ff;
-      color: #3730a3;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 500;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -104,105 +122,93 @@
     </header>
 
     <main>
-      <section>
-        <h2>About Me</h2>
+      <!-- Navigation Tabs -->
+      <nav class="tab-bar">
+        <button class="tab-btn active" onclick="openTab(event, 'about')">About Me</button>
+        <button class="tab-btn" onclick="openTab(event, 'background')">Background</button>
+        <button class="tab-btn" onclick="openTab(event, 'on-campus')">On Campus</button>
+        <button class="tab-btn" onclick="openTab(event, 'off-campus')">Off Campus</button>
+        <button class="tab-btn" onclick="openTab(event, 'contact')">Contact Me</button>
+      </nav>
+
+      <!-- Tab 1: About Me -->
+      <div id="about" class="tab-panel active">
         <p>
-          Hi! I'm Christie. I'm currently studying Computer Science at Georgia Tech, with concentrations 
-          in cybersecurity + media.
+          Hi! I'm Christie. I'm currently studying Computer Science at Georgia Tech, with concentrations in cybersecurity + media.
         </p>
-      </section>
+      </div>
 
-      <section>
-        <h2>Background</h2>
-
+      <!-- Tab 2: Background -->
+      <div id="background" class="tab-panel">
         <p>
-          Before starting college, I had never written a single line of code. I gradually began to appreciate the creativity + problem-solving that 
-          comes with programming.
-          
+          Before starting college, I had never written a single line of code. I gradually began to appreciate the creativity + problem-solving that comes with programming.
         </p>
-
         <p>
-        Currently, I'm a Ground Support Equipment co-op with Delta Airlines.
+          Currently, I'm a Ground Support Equipment co-op with Delta Air Lines.
         </p>
-
         <p>
-        In Summer '26, I interned with Drive Capital, a venture capital firm investing in America. I designed + shipped 5 features, including 
-          a browser extension that integrates with LinkedIn + Findem. 
+          In Summer '26, I interned with Drive Capital, a venture capital firm investing in America. I designed + shipped 5 features, including a browser extension that integrates with LinkedIn + Findem.
         </p>
-
         <p>
-        In Spring '25 & Fall '25, I interned with The Home Depot + worked with stakeholders to build a quoting system 
-            projected to save $20M by optimizing carpet sales.
-
+          In Spring '25 & Fall '25, I interned with The Home Depot + worked with stakeholders to build a quoting system projected to save $20M by optimizing carpet sales.
         </p>
-
         <p>
-        In Summer '25, I interned with Walmart Global Tech in their Marketplace division, where I automated 
-            a global supply chain process saving the company ~313 days of manual data entry. 
+          In Summer '25, I interned with Walmart Global Tech in their Marketplace division, where I automated a global supply chain process saving the company ~313 days of manual data entry.
         </p>
-
         <p>
-        From Sept '24 to March '25, I worked at an AI startup called Everyday. I did demos, hosted community building events including the first ever "Dreamathon," + conducted product market fit research.
+          From Sept '24 to March '25, I worked at an AI startup called Everyday. I did demos, hosted community building events including the first ever "Dreamathon," + conducted product market fit research.
         </p>
+      </div>
 
-          
-      </section>
-
-      <section>
-        <h2>On Campus</h2>
+      <!-- Tab 3: On Campus -->
+      <div id="on-campus" class="tab-panel">
         <p>
-          At Georgia Tech, I've held multiple leadership roles, including Advisor + Head of External 
-          Communications for FreShGA (Freshman Student Government), Alumni Relations Director for my
-          sorority (Kappa Alpha Theta), + committee chair for Georgia Tech’s Student Center Programs Council. 
+          At Georgia Tech, I've held multiple leadership roles, including Advisor + Head of External Communications for FreShGA (Freshman Student Government), Alumni Relations Director for my sorority (Kappa Alpha Theta), + committee chair for Georgia Tech’s Student Center Programs Council.
         </p>
-
         <p>
-          I've organized campus events with budgets totaling $100k, including the <em>The Final Stand</em> 
-          + <em>Midnight Breakfast</em>, serving thousands of students.
-
+          I've organized campus events with budgets totaling $100k, including <em>The Final Stand</em> + <em>Midnight Breakfast</em>, serving thousands of students.
         </p>
-
         <p>
-          I was a Teaching Assistant for the <em>Human Dimensions of Cybersecurity</em> 
-          course, where I developed course content + led office hours for 113 students.
+          I was a Teaching Assistant for the <em>Human Dimensions of Cybersecurity</em> course, where I developed course content + led office hours for 113 students.
         </p>
-
         <p>
           I've attended 10+ conferences (shout out to my sponsors), including RSAC, Black Hat, + South by Southwest.
         </p>
+      </div>
 
-      </section>
-
-      <section>
-        <h2>Off Campus</h2>
-          <p>
-            Outside of school + work, I love baking, playing pickleball, + traveling the world.
-          </p>
-          
-          <p>
-          Last summer, I learned cooking + started hosting dinner parties for my intern friends. I
-          continued these traditions at Tech through Brazilian steak nights, tea parties, + baking sessions. 
-          I'm known for my pão de queijo (Brazilian cheese bread). 
-          </p>
-        
-          <p>
-          In 2026, I visited 5 continents, 9 countries, + 57 cities. Some of my favorite memories include
-          visiting the Acropolis in Athens, watching the Argentina vs. Cape Verde game at the Buenos Aires Fan Fest, +
-          reuniting with family in northern China. 
-          </p>
-
-      </section>
-
-      <section>
-        <h2>Contact Me</h2>
+      <!-- Tab 4: Off Campus -->
+      <div id="off-campus" class="tab-panel">
         <p>
-          Email: christie.peng@gmail.com
+          Outside of school + work, I love baking, playing pickleball, + traveling the world.
         </p>
+        <p>
+          Last summer, I learned cooking + started hosting dinner parties for my intern friends. I continued these traditions at Tech through Brazilian steak nights, tea parties, + baking sessions. I'm known for my pão de queijo (Brazilian cheese bread).
+        </p>
+        <p>
+          In 2026, I visited 5 continents, 9 countries, + 57 cities. Some of my favorite memories include visiting the Acropolis in Athens, watching the Argentina vs. Cape Verde game at the Buenos Aires Fan Fest, + reuniting with family in northern China.
+        </p>
+      </div>
 
 
-      </section>
-
+      <div id="contact" class="tab-panel">
+        <p>
+          Email: <a href="mailto:christie.peng@gmail.com">christie.peng@gmail.com</a>
+        </p>
+      </div>
     </main>
   </div>
+
+  <script>
+    function openTab(event, tabId) {
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
 </html>
